@@ -4,9 +4,9 @@ print(paste("gen3sis version:", packageVersion("gen3sis")))
 print("run_simiulation.R")
 
 sim <- run_simulation(
-    config = file.path("/pwd/config", "config.R"), 
-    landscape = file.path("/pwd/config", "landscape"),
+    config = file.path("config.R"), 
+    landscape = file.path("/pwd", "landscape"),
     output_directory = "/pwd/data",
     call_observer = 1,
-    verbose=0
+    verbose=1
 )

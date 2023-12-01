@@ -1,6 +1,6 @@
 print("create_config.R")
 
-file.copy("config.R", "/pwd/config.R", overwrite=TRUE)
+file.copy("gen3sis-script/config.R", "/pwd/config.R", overwrite=TRUE) || file.copy("config.R", "/pwd/config.R", overwrite=TRUE)
 
 # library(gen3sis)
 

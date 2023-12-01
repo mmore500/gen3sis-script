@@ -77,10 +77,7 @@ initial_abundance = 1
 create_ancestor_species <- function(landscape, config) {
   range <- c(-95, -24, -68, 13)
   co <- landscape$coordinates
-  selection <- co[, "x"] >= range[1] &
-    co[, "x"] <= range[2] &
-    co[, "y"] >= range[3] &
-    co[, "y"] <= range[4]
+  selection <- co
 
   new_species <- list()
   for(i in 1:10){
@@ -165,28 +162,6 @@ apply_evolution <- function(species, cluster_indices, landscape, config) {
 # set the abundance to 0 for every species supposed to die
 
 apply_ecology <- function(abundance, traits, landscape, config) {
-  abundance_scale = 10
-  abundance_threshold = 1
-  #abundance threshold
-  survive <- abundance>=abundance_threshold
-  abundance[!survive] <- 0
-  abundance <- (( 1-abs( traits[, "temp"] - landscape[, "temp"]))*abundance_scale)*as.numeric(survive)
-  #abundance threshold
-  abundance[abundance<abundance_threshold] <- 0
-  k <- ((landscape[,"area"]*(landscape[,"arid"]+0.1)*(landscape[,"temp"]+0.1))*abundance_scale^2)
-  total_ab <- sum(abundance)
-  subtract <- total_ab-k
-  if (subtract > 0) {
-    # print(paste("should:", k, "is:", total_ab, "DIFF:", round(subtract,0) ))
-    while (total_ab>k){
-      alive <- abundance>0
-      loose <- sample(1:length(abundance[alive]),1)
-      abundance[alive][loose] <- abundance[alive][loose]-1
-      total_ab <- sum(abundance)
-    }
-    #set negative abundances to zero
-    abundance[!alive] <- 0
-  }
-  
+
   return(abundance)
 }

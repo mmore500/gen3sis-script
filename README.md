@@ -2,8 +2,6 @@
 
 enter docker container `sudo docker run -it -v "$(pwd)":/pwd -w /pwd mmore500/gen3sis bash`
 
-go to working directory `cd /pwd`
-
 clone script files `git clone https://github.com/mmore500/gen3sis-script` if not already present
 
 update script files `git -C gen3sis-script pull origin master`
@@ -20,3 +18,4 @@ to run a Python script `python3 gen3sis-script/script.py`
 
 to run a R script `Rscript gen3sis-script/script.R`
 
+return to working directory `cd`

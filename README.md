@@ -10,7 +10,7 @@ run workflow `Rscript gen3sis-script/run_workflow.R`
 
 data should appear in `/pwd/data/config`
 
-to run a Python script `python3 script.py`
+to run a Python script `python3 gen3sis-script/script.py`
 
-to run a R script `Rscript script.R`
+to run a R script `Rscript gen3sis-script/script.R`
 

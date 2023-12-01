@@ -1,6 +1,6 @@
 # gen3sis-script
 
-enter docker container `sudo docker run -it -v "$(pwd)":/pwd mmore500/gen3sis bash`
+enter docker container `sudo docker run -it -v "$(pwd)":/pwd -w /pwd mmore500/gen3sis bash`
 
 go to working directory `cd /pwd`
 

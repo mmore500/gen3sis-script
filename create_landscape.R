@@ -81,13 +81,22 @@ for (timestep in 1:Ntimesteps){
 }
 
 ##saving the list of rasters into .rds format to be used as input
-# saveRDS(landscapes_list, "/pwd/landscapes.rds")
+saveRDS(landscapes_list, "/pwd/landscapes.rds")
+
+# landscapes_list <- readRDS(system.file(file.path("extdata", "SouthAmerica/landscape/landscapes.rds"), package="gen3sis"))
 
 cost_function_null <- function(source, habitable_src, dest, habitable_dest) {
     return(1/1000) 
 }
 
 print("create_input_landscape, may take a moment")
+# download.file("https://github.com/project-gen3sis/R-package/blob/c394e988b4dfe34e217136d82d9130303eb31036/inst/extdata/InputRasters/SouthAmerica/area_rasters.grd", "area_rasters.grd")
+# download.file("https://github.com/project-gen3sis/R-package/blob/c394e988b4dfe34e217136d82d9130303eb31036/inst/extdata/InputRasters/SouthAmerica/area_rasters.gri", "area_rasters.gri")
+# download.file("https://github.com/project-gen3sis/R-package/blob/c394e988b4dfe34e217136d82d9130303eb31036/inst/extdata/InputRasters/SouthAmerica/aridity_rasters.grd", "aridity_rasters.grd")
+# download.file("https://github.com/project-gen3sis/R-package/blob/c394e988b4dfe34e217136d82d9130303eb31036/inst/extdata/InputRasters/SouthAmerica/aridity_rasters.gri", "aridity_rasters.gri")
+# download.file("https://github.com/project-gen3sis/R-package/blob/c394e988b4dfe34e217136d82d9130303eb31036/inst/extdata/InputRasters/SouthAmerica/temperature_rasters.grd", "temperature_rasters.grd")
+# download.file("https://github.com/project-gen3sis/R-package/blob/c394e988b4dfe34e217136d82d9130303eb31036/inst/extdata/InputRasters/SouthAmerica/temperature_rasters.gri", "temperature_rasters.gri")
+
 create_input_landscape(
     landscapes = landscapes_list,
     cost_function = cost_function_null,

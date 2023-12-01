@@ -6,7 +6,11 @@ go to working directory `cd /pwd`
 
 clone script files `git clone https://github.com/mmore500/gen3sis-script`
 
-run workflow `Rscript gen3sis-script/run_workflow.R`
+run 
+- entire workflow `Rscript gen3sis-script/run_workflow.R`
+- just create config `Rscript gen3sis-script/create_config.R`
+- just create landscape `Rscript gen3sis-script/create_landscape.R`
+- just run simulation `Rscript gen3sis-script/run_simulation.R`
 
 data should appear in `/pwd/data/config`
 

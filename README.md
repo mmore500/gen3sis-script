@@ -19,3 +19,5 @@ to run a Python script `python3 gen3sis-script/script.py`
 to run a R script `Rscript gen3sis-script/script.R`
 
 return to working directory `cd /pwd`
+
+for storing data files <https://osf.io>
